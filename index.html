@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarPets | Exclusive High Tier Pet Giveaways</title>
+    <style>
+        :root {
+            --rosa-principal: #FF69B4;
+            --rosa-claro: #FFB6C1;
+            --roxo-principal: #8B5FBF;
+            --roxo-escuro: #6A3093;
+            --amarelo-claro: #FFF9C4;
+            --verde-preppy: #4CAF50;
+            --azul-preppy: #2196F3;
+            --laranja-preppy: #FF9800;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --preto: #333333;
+            --rosa-preppy: #FF80AB;
+            --azul-claro-preppy: #80DEEA;
+            --verde-claro-preppy: #C5E1A5;
+            --lilas-preppy: #B39DDB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #FFCCE5 0%, #CCCCFF 50%, #CCFFCC 100%);
+            color: var(--preto);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.92);
+            min-height: 100vh;
+            backdrop-filter: blur(3px);
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy), var(--azul-claro-preppy));
+            color: var(--branco);
+            padding: 100px 0 60px;
+            text-align: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-bottom: 8px dotted var(--branco);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--branco), var(--amarelo-claro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px 25px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            z-index: -1;
+            border-radius: 30px;
+        }
+        
+        .logo span {
+            color: var(--branco);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            -webkit-text-fill-color: var(--branco);
+        }
+        
+        .slogan {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 2px dashed var(--branco);
+        }
+        
+        .sponsor-badge {
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            color: var(--roxo-escuro);
+            padding: 15px 35px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 35px;
+            font-weight: 800;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            font-size: 1.3rem;
+            border: 3px solid var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sponsor-badge::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy), var(--azul-claro-preppy));
+            z-index: -1;
+            border-radius: 60px;
+            opacity: 0.7;
+        }
+        
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 20px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .stat:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            color: var(--roxo-escuro);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            border: 3px solid var(--branco);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--branco), var(--azul-claro-preppy));
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--branco);
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+        
+        /* Seções */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--roxo-escuro);
+            position: relative;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 6px;
+            background: linear-gradient(to right, var(--rosa-preppy), var(--lilas-preppy), var(--azul-claro-preppy));
+            border-radius: 3px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+        
+        .section-title::before {
+            content: '✦';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--rosa-preppy);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .about {
+            background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+            margin-bottom: 50px;
+            border: 5px double var(--rosa-preppy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--rosa-claro) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--azul-claro-preppy) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+        
+        .about p {
+            margin-bottom: 30px;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight {
+            color: var(--roxo-escuro);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            padding: 5px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 2px dotted var(--roxo-principal);
+        }
+        
+        .starpets-link {
+            color: var(--roxo-escuro);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            padding: 5px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .starpets-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .starpets-link:hover {
+            background: linear-gradient(135deg, var(--azul-claro-preppy), var(--lilas-preppy));
+            color: var(--branco);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            border-color: var(--branco);
+        }
+        
+        .starpets-link:hover::before {
+            left: 100%;
+        }
+        
+        .warning {
+            background: linear-gradient(135deg, var(--rosa-claro), var(--amarelo-claro));
+            border-left: 8px solid var(--rosa-preppy);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-top: 3px dashed var(--rosa-preppy);
+            border-bottom: 3px dashed var(--rosa-preppy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warning::before {
+            content: '!';
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            font-size: 5rem;
+            color: var(--rosa-preppy);
+            opacity: 0.2;
+            font-weight: 900;
+        }
+        
+        .warning i {
+            font-size: 2rem;
+            color: var(--roxo-escuro);
+            background: var(--branco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .account-warning {
+            background: linear-gradient(135deg, #ffcccc, #ffebcc);
+            border: 4px solid #ff6666;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 20px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .account-warning::before {
+            content: '⚠️';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 2rem;
+        }
+        
+        .account-warning::after {
+            content: '⚠️';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 2rem;
+        }
+        
+        /* Lista de Pets */
+        .pets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .pet-card {
+            background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transition: all 0.5s ease;
+            text-align: center;
+            border: 5px double var(--rosa-claro);
+            position: relative;
+        }
+        
+        .pet-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            border-color: var(--lilas-preppy);
+        }
+        
+        .pet-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--roxo-principal), var(--lilas-preppy));
+            color: var(--branco);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 800;
+            z-index: 2;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            border: 2px solid var(--branco);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .pet-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy), var(--azul-claro-preppy));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 25px;
+        }
+        
+        .pet-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .pet-image img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .pet-card:hover .pet-image img {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .pet-info {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .pet-name {
+            font-size: 1.8rem;
+            color: var(--roxo-escuro);
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .pet-rarity {
+            color: var(--rosa-preppy);
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            background: rgba(255, 182, 193, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .pet-description {
+            color: var(--preto);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .pet-variants {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .pet-variant {
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            color: var(--roxo-escuro);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        
+        .pet-variant:hover {
+            background: linear-gradient(135deg, var(--azul-claro-preppy), var(--lilas-preppy));
+            color: var(--branco);
+            transform: translateY(-5px);
+            border-color: var(--branco);
+        }
+        
+        /* Como Participar */
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+            border-radius: 25px;
+            padding: 50px 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            position: relative;
+            border: 5px double var(--rosa-claro);
+            transition: all 0.4s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-15px);
+            border-color: var(--lilas-preppy);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy));
+            color: var(--branco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            border: 3px solid var(--branco);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .step-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--lilas-preppy);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .step-title {
+            font-size: 1.6rem;
+            color: var(--roxo-escuro);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .step p {
+            color: var(--preto);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* Segurança */
+        .security {
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy), var(--azul-claro-preppy));
+            color: var(--branco);
+            padding: 100px 0;
+            text-align: center;
+            border-radius: 40px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+            border: 5px double var(--branco);
+        }
+        
+        .security::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.15" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .security-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .security-badge {
+            font-size: 6rem;
+            margin-bottom: 30px;
+            text-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.2);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .security h2 {
+            margin-bottom: 30px;
+            font-size: 3rem;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            font-weight: 900;
+        }
+        
+        .security p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy), var(--azul-claro-preppy));
+            border-radius: 40px;
+            margin-top: 80px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            border: 5px double var(--roxo-escuro);
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            color: var(--roxo-escuro);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.5rem;
+            color: var(--roxo-principal);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--roxo-escuro), #4a1e8a);
+            color: var(--branco);
+            padding: 80px 0 50px;
+            text-align: center;
+            margin-top: 100px;
+            border-top: 8px dotted var(--rosa-preppy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .sponsor {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--rosa-claro);
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .official-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rosa-preppy), var(--lilas-preppy));
+            color: var(--branco);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            margin-top: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            font-size: 1.1rem;
+        }
+        
+        .official-link:hover {
+            background: linear-gradient(135deg, var(--amarelo-claro), var(--verde-claro-preppy));
+            color: var(--roxo-escuro);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: var(--rosa-claro);
+            opacity: 0.9;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .slogan {
+                font-size: 1.4rem;
+                padding: 12px 20px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .pets-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 30px;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 60px;
+            }
+            
+            .step {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .about {
+                padding: 40px;
+            }
+            
+            .header-stats {
+                gap: 25px;
+            }
+            
+            .stat {
+                padding: 15px 20px;
+            }
+            
+            .btn {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <div class="container">
+                <div class="logo-container">
+                    <h1 class="logo">Star<span>Pets</span></h1>
+                </div>
+                <p class="slogan">FREE PET DONATIONS & ROBUX GIVEAWAYS</p>
+                <div class="sponsor-badge">OFFICIALLY SPONSORED BY <a href="https://starpets.pw/" class="starpets-link" target="_blank">STARPETS</a></div>
+                
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Pets Given Away</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Happy Members</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </header>
+        
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">About The Donations</h2>
+                <div class="about">
+                    <p>Welcome to the <span class="highlight">StarPets Donation Program</span>, where we provide free high-tier pets and Robux to the Adopt Me community! Our mission is to make the game more enjoyable for everyone by distributing rare pets that are otherwise difficult to obtain.</p>
+                    
+                    <p>Our program is officially sponsored by <a href="https://starpets.pw/" class="starpets-link" target="_blank">StarPets</a>, ensuring that all donations are 100% legitimate and secure. We work directly with the developers to bring you authentic pets through safe trading methods.</p>
+                    
+                    <div class="warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <p>⚠️ <strong>IMPORTANT:</strong> All donations are completely FREE! We never ask for your password, personal information, or any form of payment. Beware of impersonators and always verify you're on our official community page.</p>
+                        </div>
+                    </div>
+                    
+                    <p>With over <span class="highlight">500+ pets donated</span> and <span class="highlight">100+ satisfied members</span>, we're committed to enhancing your Adopt Me experience. Our team manually verifies each request to ensure fair distribution and prevent abuse of our donation system.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pets-section">
+            <div class="container">
+                <h2 class="section-title">Available High Tier Pets</h2>
+                <div class="pets-grid">
+                    <!-- Shadow Dragon -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-dragon" style="font-size: 8rem; color: #4A235A;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Shadow Dragon</h3>
+                            <div class="pet-rarity">2019 HALLOWEEN • OUT OF GAME</div>
+                            <p class="pet-description">One of the rarest and most sought-after pets in Adopt Me! Originally from the 2019 Halloween event with its dark mystical appearance.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bat Dragon -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-dragon" style="font-size: 8rem; color: #8B5FBF;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Bat Dragon</h3>
+                            <div class="pet-rarity">2019 HALLOWEEN • OUT OF GAME</div>
+                            <p class="pet-description">This spooky dragon was available during the 2019 Halloween event. With its bat-like wings, it's now extremely rare and valuable.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Giraffe -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-horse" style="font-size: 8rem; color: #F39C12;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Giraffe</h3>
+                            <div class="pet-rarity">SAFARI EGG • OUT OF GAME</div>
+                            <p class="pet-description">The tallest pet in Adopt Me! Originally from the Safari Egg with its distinctive long neck and spotted pattern.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Frost Dragon -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-snowflake" style="font-size: 8rem; color: #85C1E9;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Frost Dragon</h3>
+                            <div class="pet-rarity">2019 WINTER • OUT OF GAME</div>
+                            <p class="pet-description">A beautiful ice dragon from the 2019 Christmas event. Extremely valuable with its icy blue color and frost effects.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Owl -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-feather-alt" style="font-size: 8rem; color: #7D6608;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Owl</h3>
+                            <div class="pet-rarity">FARM EGG • OUT OF GAME</div>
+                            <p class="pet-description">This adorable owl was available in the Farm Egg and has become one of the most popular and recognizable pets.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Parrot -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-feather" style="font-size: 8rem; color: #E74C3C;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Parrot</h3>
+                            <div class="pet-rarity">JUNGLE EGG • OUT OF GAME</div>
+                            <p class="pet-description">A colorful and vibrant bird from the Jungle Egg. Highly valued for its unique appearance and tropical colors.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evil Unicorn -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-horse-head" style="font-size: 8rem; color: #8E44AD;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Evil Unicorn</h3>
+                            <div class="pet-rarity">2019 HALLOWEEN • OUT OF GAME</div>
+                            <p class="pet-description">The dark counterpart to the regular unicorn, available only during the 2019 Halloween event. Extremely rare.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Crow -->
+                    <div class="pet-card">
+                        <div class="pet-badge">LEGENDARY</div>
+                        <div class="pet-image">
+                            <i class="fas fa-crow" style="font-size: 8rem; color: #2C3E50;"></i>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">Crow</h3>
+                            <div class="pet-rarity">FARM EGG • OUT OF GAME</div>
+                            <p class="pet-description">This mysterious black bird from the Farm Egg is highly sought after for its sleek design and rarity.</p>
+                            <div class="pet-variants">
+                                <span class="pet-variant">Normal</span>
+                                <span class="pet-variant">Neon</span>
+                                <span class="pet-variant">Mega Neon</span>
+                                <span class="pet-variant">Fly Ride</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="how-to-section">
+            <div class="container">
+                <h2 class="section-title">How To Participate</h2>
+                
+                <div class="account-warning">
+                    <h3>⚠️ IMPORTANT ACCOUNT POLICY ⚠️</h3>
+                    <p>NEW ACCOUNTS, SECONDARY ACCOUNTS, AND ALTERNATE ACCOUNTS WILL NOT BE ACCEPTED AND WILL BE AUTOMATICALLY BLOCKED FROM OUR SYSTEM.</p>
+                    <p>We only accept requests from established main accounts with legitimate gameplay history.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3 class="step-title">Join Our Community</h3>
+                        <p>Become an official member of our StarPets Donation Community on Roblox using the link at the bottom of this page.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="step-title">Submit Your Request</h3>
+                        <p>Post your pet or Robux request on our group wall with your Roblox username. Be specific about what you're looking for!</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="step-title">Account Verification</h3>
+                        <p>Our system will verify your account eligibility. Only established main accounts will proceed to the next step.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="step-title">Receive Your Donation</h3>
+                        <p>If approved, you'll receive a friend request from our team and can collect your pet or Robux in a secure trade!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="security-section">
+            <div class="container">
+                <div class="security">
+                    <div class="security-content">
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2>100% Safe & Verified</h2>
+                        <p>All our donations are conducted through official Roblox group systems with verified moderators. We prioritize member safety and ensure all transactions follow Roblox Terms of Service. Our team is trained to prevent scams and protect our community members at all times.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Ready to Receive Your Free Pets?</h2>
+                <p class="cta-subtitle">Join our exclusive community now and get a chance to receive amazing high-tier pets and Robux for FREE!</p>
+                
+                <div class="account-warning">
+                    <p><strong>REMINDER:</strong> New accounts, secondary accounts, and alternate accounts will be automatically blocked. We only accept established main accounts.</p>
+                </div>
+                
+                <a href="https://roblox.com.ge/communities/5873147773/" class="btn">JOIN OUR COMMUNITY NOW</a>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div>
+                        <div class="sponsor">OFFICIALLY SPONSORED BY</div>
+                        <a href="https://starpets.pw/" class="official-link" target="_blank">STARPETS.PW</a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2023 StarPets Donation Community. All rights reserved.<br>
+                        This community is not officially affiliated with Roblox or Adopt Me.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Smooth scrolling for the scroll down button
+        document.querySelector('.scroll-down').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.querySelector('.about-section').offsetTop - 50,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add animation to stats when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.stat, .pet-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
